@@ -1,0 +1,5 @@
+[package]
+name = "pai-parser"
+description = "Pai Parser"
+version.workspace =true
+edition.workspace = true

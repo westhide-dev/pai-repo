@@ -1,0 +1,15 @@
+[registries.crates-io]
+protocol = "sparse"
+
+[env]
+ENV_UNICODE_DIR = { value = "__download__/unicode", relative = true }
+ENV_PAI_UNICODE_DOWNLOAD_DIR = { value = "pai-unicode/__download__", relative = true }
+
+[alias]
+build-release = "build --release --timings=html"
+
+[build]
+rustflags = ["-Z", "threads=8"]
+
+[unstable]
+unstable-options=true

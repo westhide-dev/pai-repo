@@ -1,0 +1,15 @@
+[package]
+name = "pai-error"
+description = "Pai Error"
+version.workspace =true
+edition.workspace = true
+
+[lib]
+
+[features]
+default = []
+
+[dependencies]
+thiserror.workspace = true
+syn.workspace = true
+syn-select.workspace = true

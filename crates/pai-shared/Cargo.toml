@@ -1,0 +1,11 @@
+[package]
+name = "pai-shared"
+version.workspace =true
+edition.workspace = true
+
+[lib]
+
+[features]
+default = []
+
+[dependencies]

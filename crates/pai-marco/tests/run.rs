@@ -1,0 +1,32 @@
+//! Inspire by
+//! - [cargo-expand](https://github.com/dtolnay/cargo-expand)
+//! - [trybuild](https://github.com/dtolnay/trybuild)
+//! - [macrotest](https://github.com/eupn/macrotest)
+
+use insta::assert_snapshot;
+use pai_error::PResult;
+use pai_file::SourceFile;
+use quote::ToTokens;
+use syn;
+use syn_select;
+
+mod source;
+
+#[test]
+fn main() -> PResult<()> {
+    let source_file = SourceFile::read("__cache__/source.rs")?;
+
+    let syn_file = syn::parse_str(source_file.source())?;
+
+    let code = syn::File {
+        shebang: None,
+        attrs: Vec::new(),
+        items: syn_select::select("source::unit", &syn_file)?,
+    }
+    .into_token_stream()
+    .to_string();
+
+    assert_snapshot!(code);
+
+    Ok(())
+}

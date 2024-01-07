@@ -1,0 +1,46 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/pai-file",
+    "crates/pai-error",
+    "crates/pai-marco",
+    "crates/pai-lexer",
+    "crates/pai-parser",
+    "crates/pai-shared",
+    "crates/pai-unicode",
+]
+
+
+[workspace.package]
+version = "0.1.0"
+authors = ["westhide <mr.westhide@gmail.com>"]
+repository = "https://github.com/westhide/pai-repo.git"
+license = "MIT"
+edition = "2021"
+
+
+[workspace.dependencies]
+pai-file    .path = "crates/pai-file"
+pai-error   .path = "crates/pai-error"
+pai-marco   .path = "crates/pai-marco"
+pai-lexer   .path = "crates/pai-lexer"
+pai-parser  .path = "crates/pai-parser"
+pai-shared  .path = "crates/pai-shared"
+pai-unicode .path = "crates/pai-unicode"
+
+thiserror = "1.0.51"
+syn = { version = "2.0.41", features = ["extra-traits"] }
+quote = { version = "1.0.33" }
+
+# build
+
+# dev
+insta = "1.34.0"
+syn-select = "0.3.0"
+
+
+[profile.release]
+opt-level = 3
+strip = "symbols"
+lto = true
+codegen-units = 1

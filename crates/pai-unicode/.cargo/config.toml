@@ -1,0 +1,5 @@
+# Cargo does not read config files from crates within the workspace
+# https://doc.rust-lang.org/cargo/reference/config.html#hierarchical-structure
+
+[env]
+ENV_PAI_UNICODE_DOWNLOAD_DIR = { value = "__download__", relative = true }
