@@ -14,9 +14,7 @@ mod source;
 
 #[test]
 fn main() -> PResult<()> {
-    let source_file = SourceFile::read("__cache__/source.rs")?;
-
-    let syn_file = syn::parse_str(source_file.source())?;
+    let syn_file = syn::parse_str(SourceFile::read("__cache__/source.rs")?.source())?;
 
     let code = syn::File {
         shebang: None,
@@ -26,7 +24,5 @@ fn main() -> PResult<()> {
     .into_token_stream()
     .to_string();
 
-    assert_snapshot!(code);
-
-    Ok(())
+    Ok(assert_snapshot!(code))
 }

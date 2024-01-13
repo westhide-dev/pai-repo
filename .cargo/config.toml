@@ -2,8 +2,12 @@
 protocol = "sparse"
 
 [env]
+# rebuild AutoGen if release
+ENV_AUTOGEN_PROFILE = ""
+
 ENV_UNICODE_DIR = { value = "__download__/unicode", relative = true }
-ENV_PAI_UNICODE_DOWNLOAD_DIR = { value = "pai-unicode/__download__", relative = true }
+ENV_PAI_UNICODE_AUTOGEN_DIR = { value = "crates/pai-unicode/__AutoGen__", relative = true }
+ENV_PAI_UNICODE_DOWNLOAD_DIR = { value = "crates/pai-unicode/__download__", relative = true }
 
 [alias]
 build-release = "build --release --timings=html"
@@ -12,4 +16,4 @@ build-release = "build --release --timings=html"
 rustflags = ["-Z", "threads=8"]
 
 [unstable]
-unstable-options=true
+unstable-options = true

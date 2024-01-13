@@ -97,6 +97,10 @@ version = "0.1.0"
 [[package]]
 name = "pai-unicode"
 version = "0.1.0"
+dependencies = [
+ "pai-error",
+ "pai-file",
+]
 
 [[package]]
 name = "proc-macro2"

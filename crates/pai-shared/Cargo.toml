@@ -1,6 +1,6 @@
 [package]
 name = "pai-shared"
-version.workspace =true
+version.workspace = true
 edition.workspace = true
 
 [lib]

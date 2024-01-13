@@ -1,5 +1,6 @@
 # Configuring Rustfmt
 # https://rust-lang.github.io/rustfmt/?version=v2.0.0-rc.2
+# https://github.com/rust-lang/rustfmt/blob/master/Configurations.md
 
 # Misc
 edition = "2021"
@@ -14,6 +15,7 @@ newline_style = "Unix"
 overflow_delimited_expr = true
 trailing_semicolon = false
 use_field_init_shorthand = true
+use_try_shorthand = true
 
 # Comments
 format_code_in_doc_comments = true

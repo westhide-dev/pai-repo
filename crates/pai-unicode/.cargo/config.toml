@@ -2,4 +2,5 @@
 # https://doc.rust-lang.org/cargo/reference/config.html#hierarchical-structure
 
 [env]
+ENV_PAI_UNICODE_AUTOGEN_DIR = { value = "__AutoGen__", relative = true }
 ENV_PAI_UNICODE_DOWNLOAD_DIR = { value = "__download__", relative = true }

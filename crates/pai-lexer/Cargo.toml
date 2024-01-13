@@ -1,7 +1,7 @@
 [package]
 name = "pai-lexer"
 description = "Pai Lexer"
-version.workspace =true
+version.workspace = true
 edition.workspace = true
 
 [lib]
