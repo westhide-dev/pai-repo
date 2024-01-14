@@ -1,4 +1,4 @@
-use pai_shared::unicode;
+use pai_unicode::unicode;
 
 pub trait Unicode {
     fn is_space(&self) -> bool;

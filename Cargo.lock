@@ -71,7 +71,7 @@ dependencies = [
  "insta",
  "pai-error",
  "pai-file",
- "pai-shared",
+ "pai-unicode",
 ]
 
 [[package]]
@@ -88,10 +88,6 @@ dependencies = [
 
 [[package]]
 name = "pai-parser"
-version = "0.1.0"
-
-[[package]]
-name = "pai-shared"
 version = "0.1.0"
 
 [[package]]

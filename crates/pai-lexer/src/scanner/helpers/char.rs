@@ -1,5 +1,8 @@
 use crate::scanner::Scanner;
 
+/// Mask of the value bits of a continuation byte.
+const LAST_6BIT_MASK: u8 = 0b0011_1111;
+
 impl<'s> Scanner<'s> {
     /// [UTF8](https://tools.ietf.org/html/rfc3629)
     ///
@@ -21,14 +24,14 @@ impl<'s> Scanner<'s> {
             return char!(x)
         }
 
-        let y = self.peek(1) as u32;
+        let y = (self.peek(1) & LAST_6BIT_MASK) as u32;
 
         // UTF8-2
         if x < 0xE0 {
             return char!((x & 0x1F) << 6 | y)
         }
 
-        let z = self.peek(2) as u32;
+        let z = (self.peek(2) & LAST_6BIT_MASK) as u32;
 
         // UTF8-3
         if x < 0xF0 {
@@ -36,7 +39,7 @@ impl<'s> Scanner<'s> {
         }
 
         // UTF8-4
-        let w = self.peek(3) as u32;
+        let w = (self.peek(3) & LAST_6BIT_MASK) as u32;
 
         char!((x & 0x7) << 18 | y << 12 | z << 6 | w)
     }

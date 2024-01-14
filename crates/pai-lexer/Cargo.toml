@@ -11,7 +11,7 @@ edition.workspace = true
 [dependencies]
 pai-file.workspace = true
 pai-error.workspace = true
-pai-shared.workspace = true
+pai-unicode.workspace = true
 
 [dev-dependencies]
 insta.workspace = true

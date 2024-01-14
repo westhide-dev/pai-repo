@@ -6,7 +6,6 @@ members = [
     "crates/pai-marco",
     "crates/pai-lexer",
     "crates/pai-parser",
-    "crates/pai-shared",
     "crates/pai-unicode",
 ]
 
@@ -25,7 +24,6 @@ pai-error   .path = "crates/pai-error"
 pai-marco   .path = "crates/pai-marco"
 pai-lexer   .path = "crates/pai-lexer"
 pai-parser  .path = "crates/pai-parser"
-pai-shared  .path = "crates/pai-shared"
 pai-unicode .path = "crates/pai-unicode"
 
 thiserror = "1.0.51"

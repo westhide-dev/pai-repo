@@ -1,4 +1,7 @@
-use std::{fs, io, path::Path};
+#![feature(ascii_char_variants)]
+#![feature(ascii_char)]
+
+use std::{ascii, fs, io, path::Path};
 
 pub struct SourceFile {
     pub bytes: Vec<u8>,
@@ -9,7 +12,7 @@ impl SourceFile {
         let bytes = fs::read(path)?;
 
         // TODO: assert LF tail
-        assert!(bytes.ends_with(&[10]));
+        assert!(bytes.ends_with(&[ascii::Char::LineFeed.to_u8()]));
 
         Ok(Self { bytes })
     }
