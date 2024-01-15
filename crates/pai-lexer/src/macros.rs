@@ -22,6 +22,12 @@ macro_rules! char {
     };
 }
 
+// TODO: use ParserError
+macro_rules! err {
+    ($fmt:expr) => { Err(pai_error::PError::Info(format!($fmt))) };
+    ($fmt:expr, $($args:tt)*) =>{ Err(pai_error::PError::Info(format!($fmt,$($args)*))) }
+}
+
 macro_rules! unit {
     // Ident
     (Ident: $ident:expr) => {

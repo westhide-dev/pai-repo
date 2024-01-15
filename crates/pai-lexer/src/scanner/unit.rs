@@ -28,7 +28,6 @@ use crate::scanner::{
 pub enum Unit<'s> {
     Keyword(Keyword),
 
-    /// Punctuator
     Punctuator(Punctuator),
 
     Ident(Ident<'s>),
@@ -43,7 +42,7 @@ impl<'s> Unit<'s> {
     pub fn uid(&self) -> u8 {
         std::mem::discriminant(self);
         // Safety:
-        // Unit store `u8` discriminant as its first field, so we can read the discriminant as unit id.
+        // Unit store u8 discriminant as its first field, so we can read the discriminant as unit id.
         unsafe { *<*const Self>::from(self).cast::<u8>() }
     }
 }

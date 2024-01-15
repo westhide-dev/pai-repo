@@ -3,5 +3,3 @@ name = "pai-file"
 description = "Pai File Loader"
 version.workspace = true
 edition.workspace = true
-
-[lib]

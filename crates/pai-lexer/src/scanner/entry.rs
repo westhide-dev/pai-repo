@@ -1,4 +1,4 @@
-use pai_error::{err, PResult};
+use pai_error::PResult;
 
 use crate::scanner::{
     comment::Comment,

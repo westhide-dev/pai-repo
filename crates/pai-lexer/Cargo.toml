@@ -4,9 +4,8 @@ description = "Pai Lexer"
 version.workspace = true
 edition.workspace = true
 
-[lib]
-
 [features]
+
 
 [dependencies]
 pai-file.workspace = true

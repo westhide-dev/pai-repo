@@ -13,8 +13,9 @@ proc-macro = true
 pai-error.workspace = true
 pai-file.workspace = true
 
-[dev-dependencies]
-insta.workspace = true
 syn.workspace = true
 quote.workspace = true
+
+[dev-dependencies]
+insta.workspace = true
 syn-select.workspace = true

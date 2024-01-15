@@ -28,5 +28,3 @@ pub enum PError {
 }
 
 pub type PResult<T> = Result<T, PError>;
-
-mod macros;

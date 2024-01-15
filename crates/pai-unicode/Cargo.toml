@@ -4,12 +4,6 @@ description = "Pai Unicode"
 version.workspace = true
 edition.workspace = true
 
-[lib]
-
-[features]
-default = []
-
-
 [dependencies]
 
 
