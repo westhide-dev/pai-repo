@@ -19,7 +19,7 @@ impl SourceFile {
 
     /// # Safety
     pub fn source(&self) -> &str {
-        // TODO: source file must be valid UTF-8
+        // self.bytes must be valid UTF-8
         unsafe { std::str::from_utf8_unchecked(&self.bytes) }
     }
 
