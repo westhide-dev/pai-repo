@@ -71,6 +71,7 @@ dependencies = [
  "insta",
  "pai-error",
  "pai-file",
+ "pai-marco",
  "pai-unicode",
 ]
 

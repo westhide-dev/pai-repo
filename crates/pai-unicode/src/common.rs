@@ -12,3 +12,7 @@ pub fn bsearch_range_table(ch: char, r: &[(char, char)]) -> bool {
     })
     .is_ok()
 }
+
+pub const fn char_width(byte: u8) -> usize {
+    core::str::utf8_char_width(byte)
+}

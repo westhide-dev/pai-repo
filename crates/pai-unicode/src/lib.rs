@@ -2,6 +2,12 @@
 //! [Glossary of Unicode Terms](https://www.unicode.org/glossary/)
 //! [Unicode CodePoints](https://codepoints.net/)
 
-mod common;
+#![allow(internal_features)]
+#![feature(str_internals)]
 
+#[macro_use]
+pub mod macros;
+
+pub mod common;
+pub mod decode;
 pub mod unicode;

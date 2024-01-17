@@ -16,3 +16,4 @@ rustflags = ["-Z", "threads=8"]
 
 [unstable]
 unstable-options = true
+gc = true
