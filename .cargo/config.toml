@@ -2,6 +2,8 @@
 protocol = "sparse"
 
 [env]
+ENV_CONTRIB_DIR = { value = "contrib", relative = true }
+
 # rebuild AutoGen if release
 ENV_AUTOGEN_PROFILE = ""
 

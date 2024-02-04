@@ -26,12 +26,6 @@ macro_rules! char {
     };
 }
 
-macro_rules! bits {
-    ($ptr:expr, $offset:expr, $bits:expr, $shl:expr) => {
-        { (*$ptr.byte_offset($offset) & BIT_MASKS[$bits]) as u32 } << $shl
-    };
-}
-
 impl UTF8Decode<char> for *const u8 {
     /// [UTF8](https://tools.ietf.org/html/rfc3629)
     ///
@@ -44,6 +38,12 @@ impl UTF8Decode<char> for *const u8 {
     #[rustfmt::skip]
     fn decode(self) -> char {
         type Decoder = fn(*const u8) -> char;
+
+        macro_rules! bits {
+            ($ptr:expr, $offset:expr, $bits:expr, $shl:expr) => {
+                { (*$ptr.byte_offset($offset) & BIT_MASKS[$bits]) as u32 } << $shl
+            };
+        }
 
         const ___: Decoder = |ptr: *const u8| char!(*ptr);
         const U1B: Decoder = |ptr: *const u8| char!(*ptr);
@@ -77,11 +77,12 @@ impl UTF8Decode<char> for *const u8 {
 
 #[cfg(test)]
 mod tests {
-    use super::UTF8Decode;
+    use super::*;
 
     #[test]
     fn run() {
         // TODO: benchmark
+        //  jump table branchless code vs conditionals
         assert_eq!("A".as_ptr().decode(), 'A')
     }
 }

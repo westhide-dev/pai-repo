@@ -14,12 +14,12 @@ mod source;
 
 #[test]
 fn main() -> PResult<()> {
-    let syn_file = syn::parse_str(SourceFile::read("__cache__/source.rs")?.source())?;
+    let syn_file = syn::parse_str(SourceFile::read("__cache__/code.rs")?.source())?;
 
     let code = syn::File {
         shebang: None,
         attrs: Vec::new(),
-        items: syn_select::select("source::unit", &syn_file)?,
+        items: syn_select::select("source", &syn_file)?,
     }
     .into_token_stream()
     .to_string();

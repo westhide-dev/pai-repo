@@ -1,10 +1,8 @@
 #![feature(str_internals)]
 #![feature(ptr_sub_ptr)]
 #![feature(slice_from_ptr_range)]
-#![feature(test)]
 
 extern crate core;
-extern crate test;
 
 use pai_error::PResult;
 use scanner::Scanner;

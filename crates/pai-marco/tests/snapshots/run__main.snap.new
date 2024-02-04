@@ -1,0 +1,6 @@
+---
+source: crates/pai-marco/tests/run.rs
+assertion_line: 27
+expression: code
+---
+mod source { pub mod unit { use pai_marco :: ts_attribute ; pub fn foo () { } } }

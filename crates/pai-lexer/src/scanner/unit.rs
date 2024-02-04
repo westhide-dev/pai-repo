@@ -21,8 +21,8 @@ use crate::scanner::{
 /// ```
 ///
 /// Read more about Primitive representations:
-/// https://doc.rust-lang.org/reference/type-layout.html#primitive-representations
-/// https://doc.rust-lang.org/std/mem/fn.discriminant.html
+/// - https://doc.rust-lang.org/reference/type-layout.html#primitive-representations
+/// - https://doc.rust-lang.org/std/mem/fn.discriminant.html
 #[derive(Debug)]
 #[repr(u8)]
 pub enum Unit<'s> {
